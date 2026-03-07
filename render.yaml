@@ -1,0 +1,17 @@
+# render.yaml — Render.com auto-deploy config
+# Push this file to your GitHub repo and connect it on render.com
+
+services:
+  - type: web
+    name: vaultpk-backend
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5000
+      # Set these manually in Render dashboard → Environment tab:
+      # MONGO_URI, JWT_SECRET, CLOUDINARY_CLOUD_NAME,
+      # CLOUDINARY_API_KEY, CLOUDINARY_API_SECRET, ADMIN_EMAIL
