@@ -9,9 +9,12 @@ const app = express();
 
 // ─── MIDDLEWARE ────────────────────────────────────────────
 app.use(cors({
-  origin: process.env.NODE_ENV === 'production'
-    ? ['https://vaultpk.vercel.app']   // replace with your Vercel URL
-    : ['http://localhost:5173'],
+  origin: [
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'http://localhost:5175',
+  'https://vaultpk.vercel.app',
+],
   credentials: true,
 }));
 app.use(express.json());
